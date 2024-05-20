@@ -1,12 +1,11 @@
+import doctest
 
 import nx
-
-
 
 """
 An implementation of the algorithms in:
 "Distributed Algorithms for Matching in Hypergraphs", by Oussama Hanguir, Clifford Stein (2020), https://arxiv.org/abs/2009.09605
-Programmer: shira doplet and niv
+Programmer: shira doplet and niv motilsky
 Date: 19/05/2024
 """
 #  Greedy d-Approximation Algorithm
@@ -34,6 +33,10 @@ def greedy_d_approximation(hypergraph: list, d: int) -> int:
     >>> hypergraph = [(1, 2, 3), (2, 3, 4), (3, 4, 5), (5, 6, 7), (6, 7, 8), (7, 8, 9)]
     >>> greedy_d_approximation(hypergraph, 3)
     2
+
+    >>> hypergraph = [(1, 2, 3, 4), (5, 6, 7, 8), (9, 10, 11, 12), (13, 14, 15, 1), (2, 6, 10, 14), (3, 7, 11, 15), (4, 8, 12, 1), (5, 9, 13, 2), (6, 10, 14, 3), (7, 11, 15, 4)]
+    >>> iterated_sampling(hypergraph, 4)
+    4
     """
     return 0  # Empty implementation
 
@@ -64,6 +67,10 @@ def hedcs_based_approximation(hypergraph: list, d: int, epsilon: float) -> int:
     >>> hypergraph = [(1, 2, 3), (2, 3, 4), (3, 4, 5), (5, 6, 7), (6, 7, 8), (7, 8, 9)]
     >>> hedcs_based_approximation(hypergraph, 3, 0.1)
     2
+
+    >>> hypergraph = [(1, 2, 3, 4), (5, 6, 7, 8), (9, 10, 11, 12), (13, 14, 15, 1), (2, 6, 10, 14), (3, 7, 11, 15), (4, 8, 12, 1), (5, 9, 13, 2), (6, 10, 14, 3), (7, 11, 15, 4)]
+    >>> iterated_sampling(hypergraph, 4)
+    4
     """
     return 0  # Empty implementation
 #  Iterated Sampling Algorithm
@@ -99,3 +106,5 @@ def iterated_sampling(hypergraph: list, d: int) -> int:
     """
     return 0  # Empty implementation
 
+if __name__ == '__main__':
+    doctest.testmod()
